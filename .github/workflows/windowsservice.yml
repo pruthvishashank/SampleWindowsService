@@ -15,7 +15,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '4.0.x'
+          dotnet-version: '3.1.x'
       - name: Run Powershell script   
         shell: powershell
         run: C:\Users\mshaik07\Desktop\windows-service-deployment.ps1
