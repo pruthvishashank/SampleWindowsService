@@ -17,7 +17,7 @@ jobs:
         with:
           dotnet-version: 5.0.x
       - name: Run Powershell script   
-        shell: pwsh
+        shell: powershell
         run: |
           "C:\Users\mshaik07\Desktop\windows-service-deployment.ps1"
       #- powershell: C:\Users\mshaik07\Desktop\windows-service-deployment.ps1
