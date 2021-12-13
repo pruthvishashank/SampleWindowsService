@@ -19,7 +19,7 @@ jobs:
       - name: Run Powershell script   
         shell: pwsh
         run: |
-          C:\Users\mshaik07\Desktop\windows-service-deployment.ps1
+          "C:\Users\mshaik07\Desktop\windows-service-deployment"
       #- powershell: C:\Users\mshaik07\Desktop\windows-service-deployment.ps1
       # - name: Restore dependencies
       #   run: dotnet restore
