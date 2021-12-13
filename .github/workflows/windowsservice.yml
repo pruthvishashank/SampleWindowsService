@@ -11,11 +11,13 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      #- uses: actions/checkout@v2
-      #- name: Setup .NET
-      #  uses: actions/setup-dotnet@v1
-      #  with:
-       #   dotnet-version: '3.1.x'
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          ssh-key: ''
+          ssh-strict: ''
+          dotnet-version: '3.1.x'
       - name: Run Powershell script   
         shell: powershell
         run: C:\Users\mshaik07\Desktop\windows-service-deployment.ps1
