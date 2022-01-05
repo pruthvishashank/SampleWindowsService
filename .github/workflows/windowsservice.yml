@@ -20,6 +20,6 @@ jobs:
           #dotnet-version: '3.1.x'
       - name: Run Powershell script   
         shell: powershell
-        run: C:\ArchitectureServices\windows-service-deployment.ps1
+        run: C:\actions-runner\_work\SampleWindowsService\SampleWindowsService\windows-service-deployment.ps1
 
  
