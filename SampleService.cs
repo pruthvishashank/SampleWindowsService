@@ -20,13 +20,13 @@ namespace SampleWindowsService
         private Timer Schedular;
         protected override void OnStart(string[] args)
         {
-            this.WriteToFile("Sample Service started !!");
+            this.WriteToFile("Sample Service started !!!!");
             this.ScheduleService();
         }
 
         protected override void OnStop()
         {
-            this.WriteToFile("Sample Service Stopped !!");
+            this.WriteToFile("Sample Service Stopped !!!!");
             this.Schedular.Dispose();
         }
         public void ScheduleService()
@@ -35,7 +35,7 @@ namespace SampleWindowsService
             {
                 Schedular = new Timer(new TimerCallback(SchedularCallback));
                 string mode = "INTERVAL";
-                this.WriteToFile("Simple Service Mode: " + mode + " {0}");
+                this.WriteToFile("(Test)Simple Service Mode: " + mode + " {0}");
 
                 //Set the Default Time.
                 DateTime scheduledTime = DateTime.MinValue;
@@ -68,7 +68,7 @@ namespace SampleWindowsService
                 TimeSpan timeSpan = scheduledTime.Subtract(DateTime.Now);
                 string schedule = string.Format("{0} day(s) {1} hour(s) {2} minute(s) {3} seconds(s)", timeSpan.Days, timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
 
-                this.WriteToFile("Simple Service scheduled to run after: " + schedule + " {0}");
+                this.WriteToFile("(Test)Simple Service scheduled to run after: " + schedule + " {0}");
 
                 //Get the difference in Minutes between the Scheduled and Current Time.
                 int dueTime = Convert.ToInt32(timeSpan.TotalMilliseconds);
@@ -78,7 +78,7 @@ namespace SampleWindowsService
             }
             catch (Exception ex)
             {
-                WriteToFile("Simple Service Error on: {0} " + ex.Message + ex.StackTrace);
+                WriteToFile("(Test)Simple Service Error on: {0} " + ex.Message + ex.StackTrace);
 
                 //Stop the Windows Service.
                 using (System.ServiceProcess.ServiceController serviceController = new System.ServiceProcess.ServiceController("SimpleService"))
@@ -90,7 +90,7 @@ namespace SampleWindowsService
 
         private void SchedularCallback(object e)
         {
-            this.WriteToFile("Simple Service Log: {0}");
+            this.WriteToFile("(Test)Simple Service Log: {0}");
             this.ScheduleService();
         }
 
